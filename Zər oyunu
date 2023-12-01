@@ -1,0 +1,34 @@
+import random
+
+def zar_at():
+    return random.randint(1, 6)
+
+def zar_oyunu():
+    print("Zar Oyununa Xoş Gəldiniz!")
+    oyuncu1_skor = 0
+    oyuncu2_skor = 0
+
+    for _ in range(3):  # 3 tur oyna
+        input("Oyuncu 1, zar vurmaq üçün Enter düyməsinə basın...")
+        zar1 = zar_at()
+        print(f"Oyuncu 1-in vurduğu zar: {zar1}")
+        oyuncu1_skor += zar1
+
+        input("Oyuncu 2, zar vurmaq üçün Enter düyməsinə basın...")
+        zar2 = zar_at()
+        print(f"Oyuncu 2-in vurduğu zar: {zar2}")
+        oyuncu2_skor += zar2
+
+    print("\nOyun Bitdi!")
+    print(f"Oyuncu 1-in ümumi xalı: {oyuncu1_skor}")
+    print(f"Oyuncu 2-in ümumi xalı: {oyuncu2_skor}")
+
+    if oyuncu1_skor > oyuncu2_skor:
+        print("Oyuncu 1 qalib!")
+    elif oyuncu2_skor > oyuncu1_skor:
+        print("Oyuncu 2 qalib!")
+    else:
+        print("Berabərlik!")
+
+if __name__ == "__main__":
+    zar_oyunu()
